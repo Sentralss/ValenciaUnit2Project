@@ -21,18 +21,6 @@ public class LinearEquationRunner
        int ycords2 = Integer.parseInt(y2);
 
        System.out.println();
-       System.out.println("The two points are: " + xycord1 + " and " + xycord2)
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
