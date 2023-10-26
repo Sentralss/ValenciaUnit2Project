@@ -26,6 +26,9 @@ public class LinearEquationRunner
        System.out.println(equa.slope());
        System.out.println(equa.yIntercept());
        System.out.println(equa.equation());
+       System.out.print("Enter a value for x: ");
+       double cordx = scan.nextInt();
+
 
     }
 }

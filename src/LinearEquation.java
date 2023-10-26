@@ -10,6 +10,13 @@ public class LinearEquation
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+        // Checks if the x values are equal if they arent it prints out what line they lie on and ends the program
+        if(x1 == x2)
+        {
+
+            System.out.println("These points are on a vertical line: x = " + x1);
+            System.exit(x1);
+        }
     }
 
     public double distance()
@@ -51,7 +58,9 @@ public class LinearEquation
 
     public String coordinateForX(double xValue)
     {
-
+        double xcord =
+        double ycord = roundedToHundredth(((slope() * x1) + yIntercept()));
+        System.out.println("The point on the line is (" + x1 + ", " + ycord + ")");
     }
 
     public double roundedToHundredth(double toRound)
@@ -62,7 +71,7 @@ public class LinearEquation
 
     public String lineInfo()
     {
-
+        return "";
     }
 
 
