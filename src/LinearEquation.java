@@ -49,17 +49,17 @@ public class LinearEquation
         String equation = "";
         if(O < 0 || i < 0)
         {
-            equation = "y = -" + Math.abs(i) + "/" + Math.abs(O) + "x" + " + " + y;
+            equation = "y = -" + Math.abs(i) + "/" + Math.abs(O) + "x" + " + " + Math.abs(y);
             if (y < 0)
             {
                 equation = "y = -" + Math.abs(i) + "/" + Math.abs(O) + "x" + " - " + Math.abs(y);
                 if (i % O == 0)
                 {
-                    equation = "y = -" + i / O + "x" + " - " + Math.abs(y);
+                    equation = "y = -" + Math.abs(i) / Math.abs(O) + "x" + " - " + Math.abs(y);
                 }
                 if (O == 1)
                 {
-                    equation = "y = -" + i + "x" + " - " + Math.abs(y);
+                    equation = "y = -" + Math.abs(i) + "x" + " - " + Math.abs(y);
                 }
                 if (O == i)
                 {
@@ -68,16 +68,16 @@ public class LinearEquation
             }
             if (i % O == 0)
             {
-                equation = "y = -" + i / O + "x" + " + " + y;
+                equation = "y = -" + Math.abs(i) / Math.abs(O) + "x" + " + " + Math.abs(y);
 
             }
             if (O == 1)
             {
-                equation = "y = -" + i + "x" + " + " + y;
+                equation = "y = -" + i + "x" + " + " + Math.abs(y);
             }
             if (O == i)
             {
-                equation = "y = -x" + " + " + y;
+                equation = "y = -x" + " + " + Math.abs(y);
             }
             if (y == 0)
             {
@@ -92,7 +92,7 @@ public class LinearEquation
                 equation = "y = " + Math.abs(i) + "/" + Math.abs(O) + "x" + " - " + Math.abs(y);
                 if (i % O == 0)
                 {
-                    equation = "y = " + i / O + "x" + " - " + Math.abs(y);
+                    equation = "y = " + Math.abs(i) / Math.abs(O) + "x" + " - " + Math.abs(y);
                 }
                 if (O == -1)
                 {
@@ -110,21 +110,21 @@ public class LinearEquation
             }
             if (i % O == 0)
             {
-                equation = "y = " + i / O + "x" + " + " + y;
+                equation = "y = " + Math.abs(i) / Math.abs(O) + "x" + " + " + Math.abs(y);
 
             }
             if (O == -1)
             {
-                equation = "y = " + Math.abs(i) + "x" + " + " + y;
+                equation = "y = " + Math.abs(i) + "x" + " + " + Math.abs(y);
             }
             if (O == i)
             {
-                equation = "y = x" + " + " + y;
+                equation = "y = x" + " + " + Math.abs(y);
             }
         }
         if (y1 == y2)
         {
-            equation = "y = " + " y";
+            equation = "y = " + y;
         }
 
         return equation;
