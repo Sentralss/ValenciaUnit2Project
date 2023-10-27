@@ -8,10 +8,13 @@ public class LinearEquationRunner
        System.out.println("Welcome!");
        System.out.print("Enter coordinate 1: ");
        String xycord1 = scan.nextLine();
+
        String x1 = xycord1.substring(1,xycord1.indexOf(","));
        String y1 = xycord1.substring(xycord1.indexOf(",") + 2, xycord1.length() - 1);
+
        System.out.print("Enter coordinate 2: ");
        String xycord2 = scan.nextLine();
+
        String x2 = xycord2.substring(1,xycord2.indexOf(","));
        String y2 = xycord2.substring(xycord2.indexOf(",") + 2, xycord2.length() - 1);
        System.out.println();
@@ -22,13 +25,15 @@ public class LinearEquationRunner
        int ycords2 = Integer.parseInt(y2);
 
        LinearEquation equa = new LinearEquation(xcords1, ycords1, xcords2, ycords2);
-       System.out.println(equa.distance());
+       /* System.out.println(equa.distance());
        System.out.println(equa.slope());
        System.out.println(equa.yIntercept());
        System.out.println(equa.equation());
-       System.out.print("Enter a value for x: ");
-       double cordx = scan.nextInt();
 
+       System.out.print("Enter a value for x: ");
+       int newXCoord = scan.nextInt();
+       System.out.print(equa.coordinateForX(newXCoord)); */
+       System.out.print(equa.equation());
 
     }
 }

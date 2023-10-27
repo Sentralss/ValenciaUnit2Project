@@ -47,20 +47,93 @@ public class LinearEquation
         int O = x2 - x1;
         double y = yIntercept();
         String equation = "";
-        if(O < 0)
+        if(O < 0 || i < 0)
         {
-            O = Math.abs(O);
-            i = i - i * 2;
-            equation = "y = " + i + "/" + O + "x" + " + " + y;
+            equation = "y = -" + Math.abs(i) + "/" + Math.abs(O) + "x" + " + " + y;
+            if (y < 0)
+            {
+                equation = "y = -" + Math.abs(i) + "/" + Math.abs(O) + "x" + " - " + Math.abs(y);
+                if (i % O == 0)
+                {
+                    equation = "y = -" + i / O + "x" + " - " + Math.abs(y);
+                }
+                if (O == 1)
+                {
+                    equation = "y = -" + i + "x" + " - " + Math.abs(y);
+                }
+                if (O == i)
+                {
+                    equation = "y = -x" + " - " + Math.abs(y);
+                }
+            }
+            if (i % O == 0)
+            {
+                equation = "y = -" + i / O + "x" + " + " + y;
+
+            }
+            if (O == 1)
+            {
+                equation = "y = -" + i + "x" + " + " + y;
+            }
+            if (O == i)
+            {
+                equation = "y = -x" + " + " + y;
+            }
+            if (y == 0)
+            {
+                equation = "y = -" + Math.abs(i) + "/" + Math.abs(O) + "x";
+
+            }
         }
-        return equation ;
+        if(O < 0 && i < 0 || O > 0 && i > 0  )
+        {
+            equation = "y = " + Math.abs(i) + "/" + Math.abs(O) + "x" + " + " + y;
+            if (y < 0) {
+                equation = "y = " + Math.abs(i) + "/" + Math.abs(O) + "x" + " - " + Math.abs(y);
+                if (i % O == 0)
+                {
+                    equation = "y = " + i / O + "x" + " - " + Math.abs(y);
+                }
+                if (O == -1)
+                {
+                    equation = "y = " + Math.abs(i) + "x" + " - " + Math.abs(y);
+                }
+                if (O == i)
+                {
+                    equation = "y = x" + " - " + Math.abs(y);
+                }
+            }
+            if (y == 0)
+            {
+                equation = "y = " + Math.abs(i) + "/" + Math.abs(O) + "x";
+
+            }
+            if (i % O == 0)
+            {
+                equation = "y = " + i / O + "x" + " + " + y;
+
+            }
+            if (O == -1)
+            {
+                equation = "y = " + Math.abs(i) + "x" + " + " + y;
+            }
+            if (O == i)
+            {
+                equation = "y = x" + " + " + y;
+            }
+        }
+        if (y1 == y2)
+        {
+            equation = "y = " + " y";
+        }
+
+        return equation;
     }
 
     public String coordinateForX(double xValue)
     {
-        double xcord =
-        double ycord = roundedToHundredth(((slope() * x1) + yIntercept()));
-        System.out.println("The point on the line is (" + x1 + ", " + ycord + ")");
+        double ycord = roundedToHundredth(((slope() * xValue) + yIntercept()));
+        return "\nThe point on the line is (" + xValue + ", " + ycord + ")";
     }
 
     public double roundedToHundredth(double toRound)
