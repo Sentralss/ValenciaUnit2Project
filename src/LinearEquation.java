@@ -124,7 +124,7 @@ public class LinearEquation
         }
         if (y1 == y2)
         {
-            equation = "y = " + y;
+            equation = "y = " + Math.round(y);
         }
 
         return equation;
